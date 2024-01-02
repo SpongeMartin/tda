@@ -1,10 +1,11 @@
 import random
+import numpy as np
 from matplotlib import pyplot
 
 random.seed(10)
 
 def generatePointCloud(n):
-    return [(random.randint(-n, n), random.randint(-n, n)) for _ in range(n)]
+    return np.random.randint(-100,100,size=(100,n))
 
 def plot(points):
     xs, ys = map(list, zip(*points))
@@ -13,5 +14,5 @@ def plot(points):
     pyplot.show()
 
 
-#print(generatePointCloud(100))
+#print(generatePointCloud(3))
 #plot(generatePointCloud(100))
